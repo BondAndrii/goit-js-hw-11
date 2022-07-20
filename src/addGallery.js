@@ -2,31 +2,30 @@ function addToGallery (images) {
 
     const galeryAddImages = images.map(image => 
        
-        `<div class="photo-card">
-  <img src="${image.webformatURL}" alt="${image.tag}" loading="lazy" />
-  <div class="info">
-    <p class="info-item">
-      <b>Likes</b><br/>
-      <p>${image.likes}</p>
-    </p>
-    <p class="info-item">
-      <b>Views</b><br/>
-      <p>${image.views}</p>
-    </p>
-    <p class="info-item">
-      <b>Comments</b><br/>
-      <p>${image.comments}</p>
-    </p>
-    <p class="info-item">
-      <b>Downloads</b><br/>
-      <p>${image.downloads}</p>
-    </p>
-  </div>
-</div>`).join('');
-  console.log( "html", galeryAddImages);
+        `<a href="${image.largeImageURL}" class="photo-card">
+            <div class="image-place" >
+                <img class="image-card" src="${image.webformatURL}" alt="${image.tag}" loading="lazy" />
+            </div>  
+            <div class="info">
+                <p class="info-item">
+                  <b>Likes
+                  ${image.likes}</b>
+                </p>
+                <p class="info-item">
+                  <b>Views
+                  ${image.views}</b>
+                </p>
+                <p class="info-item">
+                  <b>Comments
+                  ${image.comments}</b>
+                </p>
+                <p class="info-item">
+                  <b>Downloads
+                  ${image.downloads}</b>
+                </p>
+            </div>
+          </a>`).join('');
+  // console.log( "html", galeryAddImages);
 return galeryAddImages
 }
-
-
-
 export default addToGallery
